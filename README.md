@@ -1,3 +1,3 @@
 # MyQuiz
 
-CLI app built with NodeJS. 
+This is a CLI app built with NodeJS. 
