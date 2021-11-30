@@ -57,7 +57,7 @@ for(i=0;i<questions.length;i++)
     play(curr.question, curr.answer, curr.options)
 }
 
-console.log("Your final score is: ", score)
+console.log("Your final score is:", score,"/5")
 if(score==questions.length)
 {
     console.log("Yayyyy, you know me super duper well!")
