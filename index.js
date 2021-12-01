@@ -9,7 +9,7 @@ questions = [
     {
         question: "Which is my favourite cuisine",
         answer: "Chinese",
-        options: ["Italian", "Chinese", "Mexican", "Thai"]
+        options: ["Italian", "Chinese", "Mexican"]
     },
     {
         question: "Who is my favourite artist? ",
@@ -19,7 +19,7 @@ questions = [
     },
     {
         question: "What annoys me the most? ",
-        answer: "Unhygienic places ",
+        answer: "Unhygienic places",
         options: ["Unhygienic places", "Incomplete sleep", "Exams"]
 
     },
@@ -36,12 +36,34 @@ questions = [
      options: ["khichdi", "dal chaawal", "roti-sabzi"]
     },
 
+    {   
+     question: "What is my pet's name?",
+     answer: "Spike",
+     options: ["Tommy", "Spike", "Lizzy"]
+    },
+
+    {   
+     question: "Which is my favourite sitcom?",
+     answer: "The Office",
+     options: ["HIMYM", "Friends", "The Office"]
+    },
+
+    {   
+     question: "What's my Twitter username?",
+     answer: "HoejackBorseman",
+     options: ["muskaanbagrecha", "HoejackBorseman", "NaamTohSunaHoga"]
+    },
+
 ]
 
 function play(question, answer, options)
 {
     index = readlineSync.keyInSelect(options, question)
-    if(options[index]==answer)
+    if(options[index]=="CANCEL")
+    {
+        console.log("You will be penalized by one point for skipping that question.")
+    }
+    else if(options[index]==answer)
     {   
         console.log("That is correct!!!")
         score+=1
@@ -57,8 +79,13 @@ for(i=0;i<questions.length;i++)
     play(curr.question, curr.answer, curr.options)
 }
 
-console.log("Your final score is:", score,"/5")
+console.log("Your final score is:", score,"/8")
 if(score==questions.length)
 {
     console.log("Yayyyy, you know me super duper well!")
+}
+
+else if(score<4)
+{
+    console.log("Do you even know me?")
 }
